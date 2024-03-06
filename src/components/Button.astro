@@ -1,0 +1,15 @@
+---
+type Props = {
+  href: string;
+  label: string;
+};
+
+const { href, label } = Astro.props;
+---
+
+<a
+  href={href}
+  class="inline-flex items-center justify-center font-secondary text-sm text-primary leading-normal italic px-6 py-2 rounded-full transition gap-1 border border-primary hover:bg-white/5"
+>
+  {label}
+</a>

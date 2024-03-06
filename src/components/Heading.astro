@@ -1,0 +1,13 @@
+---
+type Props = {
+  title: string;
+  fontSize: string;
+  isItalic?: boolean;
+};
+
+const { title, fontSize, isItalic } = Astro.props;
+---
+
+<h2 class={`font-secondary text-${fontSize} text-primary ${isItalic ? 'italic': ''} mb-16`}>
+  {title}
+</h2>

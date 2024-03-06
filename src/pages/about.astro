@@ -1,0 +1,115 @@
+---
+import { ArrowUpRight } from "lucide-astro";
+import {
+  MailCheck,
+  Linkedin,
+  Github,
+  Twitter,
+  Youtube,
+  Instagram,
+} from "lucide-astro";
+import Layout from "@/layouts/Layout.astro";
+import Heading from "@/components/Heading.astro";
+
+const social = [
+  {
+    name: "Email",
+    icon: MailCheck,
+    link: "mailto:sergiodev91@gmail.com",
+  },
+  {
+    name: "LinkedIn",
+    icon: Linkedin,
+    link: "https://www.linkedin.com/in/sergiorojas91/",
+  },
+  {
+    name: "Github",
+    icon: Github,
+    link: "https://github.com/sergiodev91",
+  },
+  {
+    name: "Twitter",
+    icon: Twitter,
+    link: "https://twitter.com/sergiocode_",
+  },
+  {
+    name: "Youtube",
+    icon: Youtube,
+    link: "https://www.youtube.com/@sergiocode_",
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    link: "https://www.instagram.com/sergiocode_",
+  },
+];
+---
+
+<Layout title="Sobre mí | Software Developer">
+  <main class="py-16">
+    <Heading title="Sobre mí" fontSize="4xl" />
+    <div class="flex flex-col gap-24">
+      <!-- section -->
+      <section class="flex flex-row font-light leading-normal gap-9">
+        <h2 class="w-32 font-normal text-secondary">Sobre mí</h2>
+        <div class="flex flex-col w-full text-primary gap-8">
+          <p>¡Hola mundo, soy Brian Ruiz!</p>
+          <p>
+            Me apasiona el diseño y siempre estoy buscando formas de
+            incorporarlo a mi trabajo de ingeniería.
+          </p>
+          <p>
+            Además de codificar, también hago videos para YouTube , donde me
+            concentro en equipos tecnológicos, vlogs creativos y un poco de
+            desarrollo personal.
+          </p>
+          <p>
+            Cuando no estoy en mi escritorio probablemente estoy levantando
+            pesas, jugando fútbol o en una cafetería :)
+          </p>
+        </div>
+      </section>
+      <!-- section -->
+      <section class="flex flex-row font-light leading-normal gap-9">
+        <h2 class="w-32 font-normal text-secondary">Conectar</h2>
+        <div class="flex flex-col w-full text-primary gap-8">
+          <p>
+            Have a question or just want to chat? Feel free to email me. Try
+            finding me anywhere else at @brianruizy
+          </p>
+          <div class="grid grid-cols-2 text-sm gap-2">
+            {
+              social.map(({ name, icon: Icon, link }: any): any => (
+                <a
+                  href={link}
+                  target="_blank"
+                  class="w-full border rounded-lg p-4 transition border-primary/20 hover:bg-white/5 hover:border-primary"
+                >
+                  <div class="flex items-center gap-3">
+                    <Icon class="w-4 h-4" />
+                    {name}
+                    <ArrowUpRight class="w-4 h-4 ml-auto" />
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+      <!-- section -->
+      <section class="flex flex-row font-light leading-normal gap-9">
+        <h2 class="w-32 font-normal text-secondary">Experiencia</h2>
+        <div class="flex flex-col w-full text-primary gap-8">
+          <p>Más de 5 años de experiencia en desarrollo profesional.</p>
+          <p>
+            Comencé mi carrera enseñando a otros a codificar, algo que siempre
+            estaré agradecido. Luego trabajé en algunas pequeñas empresas
+            locales. Ahora soy un ingeniero completo y actualmente trabajo en
+            Hines , uno de los inversores inmobiliarios privados más grandes del
+            mundo.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>

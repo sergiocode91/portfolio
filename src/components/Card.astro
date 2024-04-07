@@ -13,14 +13,14 @@ type Props = {
 const { title, description, createdDate, slug } = Astro.props;
 ---
 
-<article class="flex flex-col text-primary mb-10">
+<article class="flex flex-col text-tertiary dark:text-primary mb-10">
   <a href={`/blog/${slug}`}>
-    <h3 class="font-secondary text-2xl leading-tight hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1">
+    <h3 class="font-secondary text-xl lg:text-2xl leading-tight hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1">
       {title}
     </h3>
-    <div class="font-light text-sm text-secondary leading-normal mt-1">
+    <div class="font-light text-sm text-tertiary dark:text-secondary leading-normal mt-1">
       <FormattedDate date={new Date(createdDate)} />
     </div>
-    <div class="font-light leading-normal mt-3">{description} </div>
+    <div class="font-light leading-normal mt-3">{description}</div>
   </a>
 </article>

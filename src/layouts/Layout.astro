@@ -21,8 +21,14 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<script>
+			if (localStorage.theme === 'dark') {
+					document.documentElement.classList.add('dark');
+			}
+		</script>
 	</head>
-	<body>
+	<body class="bg-secondary dark:bg-primary">
 		<main class="w-full max-w-[800px] mx-auto px-6">
 			<ViewTransitions />
 			<Header />
@@ -31,22 +37,3 @@ const { title } = Astro.props;
 		</main>
 	</body>
 </html>
-<style is:global>
-	html {
-		font-family: 'Inter Variable', system-ui, sans-serif;
-		font-weight: normal;
-		background-color: #171717;
-		/* background-color: #070707; */
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

@@ -13,9 +13,9 @@ const { author, authorImage, createdDate } = Astro.props;
 <div class="flex items-center">
   <img class="w-10 h-10 rounded-full" src={authorImage} alt={author} />
   <div class="text-sm ml-4">
-    <h2 class="text-primary">{author}</h2>
-    <p class="font-light text-secondary">
-      <FormattedDate date={new Date(createdDate)} /> · 2 minutos de lectura
+    <h2 class="text-tertiary dark:text-primary">{author}</h2>
+    <p class="font-light text-tertiary dark:text-secondary">
+      <FormattedDate date={new Date(createdDate)} /> · 4.835 views
     </p>
   </div>
 </div>

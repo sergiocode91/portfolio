@@ -15,7 +15,7 @@ export default {
       },
       backgroundColor: {
         primary: "#171717",
-        secondary: "#FFFFFF"
+        secondary: "#FFFFFF",
       },
       borderColor: {
         primary: "#F2F1EC",
@@ -34,38 +34,39 @@ export default {
                 textDecorationStyle: "solid",
               },
             },
-						p: {
-							fontSize: "1rem",
-						},
+            p: {
+              fontSize: "1rem",
+            },
             "h1,h2,h3,h4,h5,h6": {
               fontFamily: theme("fontFamily.serif"),
               fontWeight: 500,
-              color: theme("textColor.primary"),
             },
-						code: {
-              'background-color': 'rgb(var(--color-code-bg))',
-              color: 'rgb(var(--color-code-text))',
-              padding: '0.25rem 0.5rem',
-              'border-radius': '0.25rem',
-              'font-size': '1rem',
-              'line-height': '1.5',
-              'font-family': "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+            code: {
+              "background-color": "rgb(var(--color-code-bg))",
+              color: "rgb(var(--color-code-text))",
+              padding: "0.25rem 0.5rem",
+              "border-radius": "0.25rem",
+              "font-size": "1rem",
+              "line-height": "1.5",
+              "font-family":
+                "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
             },
-            'ol > li::before': {
-              color: 'rgb(var(--color-text-bold))',
+            "ol > li::before": {
+              color: "rgb(var(--color-text-bold))",
             },
             li: {
-              'margin-bottom': '0.5rem',
-              color: 'rgb(var(--color-code-text))',
-              'font-size': '1rem',
-              'line-height': '1.5',
-              'font-family': "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+              "margin-bottom": "0.5rem",
+              color: "rgb(var(--color-code-text))",
+              "font-size": "1rem",
+              "line-height": "1.5",
+              "font-family":
+                "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
             },
-            'code::before': {
-              content: 'none',
+            "code::before": {
+              content: "none",
             },
-            'code::after': {
-              content: 'none',
+            "code::after": {
+              content: "none",
             },
             blockquote: {
               border: 0,

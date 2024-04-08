@@ -1,5 +1,14 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import ThemeToggle from '@/components/ThemeToggle.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const pathname = new URL(Astro.request.url).pathname;
+
+const lang = getLangFromUrl(Astro.url);
+const translate = useTranslations(lang);
+
+const { currentLocale } = Astro;
 ---
 
 <header class="py-5">
@@ -9,10 +18,35 @@ import ThemeToggle from '@/components/ThemeToggle.astro';
       <img src="/logo_dark.svg" alt="Sergio Rojas" class="w-8 h-8 dark:block" />
     </a>
     <nav class="hidden lg:flex text-sm gap-6">
-      <a href="/about" class="font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1">Sobre mí</a>
-      <a href="/blog" class="font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1">Blog</a>
-      <a href="/projects" class="font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1">Proyectos</a>
+      <a 
+        href={getRelativeLocaleUrl(currentLocale ?? '', 'about')}
+        class={`
+          font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1 
+          ${pathname.startsWith('/about') ? 'underline decoration-dashed underline-offset-4 decoration-1 ' : ''}
+        `}
+      >
+        {translate('nav.about')}
+      </a>
+      <a 
+        href={getRelativeLocaleUrl(currentLocale ?? '', 'blog')}
+        class={`
+          font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1
+          ${pathname.startsWith('/blog') ? 'underline decoration-dashed underline-offset-4 decoration-1 ' : ''}
+        `}
+      >
+        {translate('nav.blog')}
+      </a>
+      <a 
+        href={getRelativeLocaleUrl(currentLocale ?? '', 'projects')}
+        class={`
+          font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1
+          ${pathname.startsWith('/projects') ? 'underline decoration-dashed underline-offset-4 decoration-1 ' : ''}
+        `}
+      >
+        {translate('nav.projects')}
+      </a>
     </nav>
     <ThemeToggle>
   </div>
 </header>
+ 

@@ -3,8 +3,10 @@ import { Moon, Sun } from "lucide-astro";
 ---
 
 <button id="theme-toggle">
-  <Moon class="icon-moon hidden" size="22" />
-  <Sun class="icon-sun" size="22" />
+  <!-- <Moon class="icon-moon hidden" size="22" />
+  <Sun class="icon-sun" size="22" /> -->
+  <div class="icon-dark hidden w-3 h-3 rounded-full bg-secondary"></div>
+  <div class="icon-light w-3 h-3 rounded-full bg-primary"></div>
 </button>
 
 <script>
@@ -20,8 +22,8 @@ document.addEventListener("astro:page-load", () => {
   const setTheme = (theme: 'light' | 'dark') => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
     localStorage.setItem('theme', theme);
-    document.querySelector('.icon-moon')?.classList.toggle('hidden', theme !== 'dark');
-    document.querySelector('.icon-sun')?.classList.toggle('hidden', theme === 'dark');
+    document.querySelector('.icon-dark')?.classList.toggle('hidden', theme !== 'dark');
+    document.querySelector('.icon-light')?.classList.toggle('hidden', theme === 'dark');
   };
 
   setTheme(getTheme());

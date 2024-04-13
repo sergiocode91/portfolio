@@ -21,6 +21,6 @@ const { title, description, createdDate, slug } = Astro.props;
     <div class="font-light text-sm text-tertiary dark:text-secondary leading-normal mt-1">
       <FormattedDate date={new Date(createdDate)} />
     </div>
-    <div class="font-light leading-normal mt-3">{description}</div>
+    <div class="font-light text-sm lg:text-base leading-normal mt-3">{description}</div>
   </a>
 </article>

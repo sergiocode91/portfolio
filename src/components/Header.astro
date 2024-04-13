@@ -1,7 +1,8 @@
 ---
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
-import ThemeToggle from '@/components/ThemeToggle.astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+
+import ThemeToggle from '@/components/ThemeToggle.astro';
 
 const pathname = new URL(Astro.request.url).pathname;
 

@@ -1,0 +1,22 @@
+{
+  "HOME": {
+    "GREETING": "Hey, Soy Sergio!",
+    "INTRODUCTION": "Software Developer con más de 8 años de experiencia y creador de contenido. Mi objetivo es mejorar tu aprendizaje y mostrarte cómo la programación puede transformar tu vida!"
+  },
+  "BUTTONS": {
+    "LETS_TALK": "Hablemos",
+    "SEE_PUBLICATIONS": "Ver toda las publicaciones"
+  },
+  "HEADING": {
+    "PUBLICATIONS": "Publicaciones"
+  },
+  "ABOUT": {
+    "TITLE_PAGE": "Sobre mí",
+    "ABOUT_SECTION": "Sobre mí",
+    "CONNECT_SECTION": "Conectar",
+    "EXPERIENCE_SECTION": "Experiencia"
+  },
+  "PROJECTS": {
+    "TITLE_PAGE": "Proyectos"
+  }
+}

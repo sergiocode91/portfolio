@@ -1,0 +1,28 @@
+---
+import { languages } from "@/i18n/ui";
+import {
+  getRouteFromUrl,
+  getLangFromUrl,
+  useTranslatedPath,
+} from "@/i18n/utils";
+
+const route = getRouteFromUrl(Astro.url);
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+---
+
+<div class="space-x-2">
+  { Object.entries(languages).map(([currentLang, label]) => (
+      <a 
+        href={translatePath(`/${route ? route : ""}`, currentLang)}
+        class={`${
+        currentLang === lang
+          ? "underline decoration-dashed underline-offset-4 decoration-1"
+          : "hover:text-tertiary dark:hover:text-secondary opacity-70 hover:opacity-100 hover:underline decoration-dashed underline-offset-4 decoration-1"
+      }`}
+      >
+        {label}
+      </a>
+    ))
+  }
+</div>

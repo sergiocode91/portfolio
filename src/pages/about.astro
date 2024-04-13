@@ -1,5 +1,7 @@
 ---
 import { ArrowUpRight } from "lucide-astro";
+import { getI18N } from "@/i18n";
+
 import {
   MailCheck,
   Linkedin,
@@ -10,6 +12,9 @@ import {
 } from "lucide-astro";
 import Layout from "@/layouts/Layout.astro";
 import Heading from "@/components/Heading.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({currentLocale});
 
 const social = [
   {
@@ -47,11 +52,11 @@ const social = [
 
 <Layout title="Sobre mí | Software Developer">
   <main class="py-16">
-    <Heading title="Sobre mí" fontSize="4xl" />
+    <Heading title={i18n.ABOUT.TITLE_PAGE} fontSize="4xl" />
     <div class="flex flex-col gap-24">
       <!-- section -->
       <section class="flex flex-row font-light leading-normal gap-9">
-        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">Sobre mí</h2>
+        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">{i18n.ABOUT.ABOUT_SECTION}</h2>
         <div class="flex flex-col w-full text-tertiary dark:text-primary gap-8">
           <p>¡Hola mundo, soy Brian Ruiz!</p>
           <p>
@@ -71,7 +76,7 @@ const social = [
       </section>
       <!-- section -->
       <section class="flex flex-row font-light leading-normal gap-9">
-        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">Conectar</h2>
+        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">{i18n.ABOUT.CONNECT_SECTION}</h2>
         <div class="flex flex-col w-full text-tertiary dark:text-primary gap-8">
           <p>
             Have a question or just want to chat? Feel free to email me. Try
@@ -98,7 +103,7 @@ const social = [
       </section>
       <!-- section -->
       <section class="flex flex-row font-light leading-normal gap-9">
-        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">Experiencia</h2>
+        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">{i18n.ABOUT.EXPERIENCE_SECTION}</h2>
         <div class="flex flex-col w-full text-tertiary dark:text-primary gap-8">
           <p>Más de 5 años de experiencia en desarrollo profesional.</p>
           <p>

@@ -1,14 +1,17 @@
 ---
+import { getI18N } from "@/i18n";
+
 import Button from "@/components/Button.astro";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({currentLocale});
 ---
 
 <section class="text-tertiary dark:text-primary mb-28 space-y-7">
   <img src="/avatar.png" alt="Sergio Rojas" class="w-16 h-16 rounded-full" />
-  <h1 class="font-secondary text-3xl lg:text-5xl">Hey, Soy Sergio! 👋</h1>
+  <h1 class="font-secondary text-3xl lg:text-5xl">{i18n.HOME.GREETING} 👋</h1>
   <p class="max-w-2xl font-light leading-normal">
-    Software Developer con más de 8 años de experiencia y creador de contenido.
-    Mi objetivo es mejorar tu aprendizaje y mostrarte cómo la programación puede
-    transformar tu vida!
+    {i18n.HOME.INTRODUCTION}
   </p>
-  <Button href="/contact" label="Hablemos" />
+  <Button href="/contact" label={i18n.BUTTONS.LETS_TALK} />
 </section>

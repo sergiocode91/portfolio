@@ -4,6 +4,7 @@ export const languages = {
 }
 
 export const defaultLang = 'en';
+export const showDefaultLang = false;
 
 export const ui = {
   en: {
@@ -15,5 +16,18 @@ export const ui = {
     'nav.about': 'Sobre mí',
     'nav.blog': 'Blog',
     'nav.projects': 'Proyectos',
+  },
+} as const;
+
+export const routes = {
+  en: {
+    about: 'about',
+    blog: 'blog',
+    projects: 'projects',
+  },
+  es: {
+    about: 'sobre-mi',
+    blog: 'blog',
+    projects: 'proyectos',
   },
 } as const;

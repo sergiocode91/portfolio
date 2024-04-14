@@ -62,7 +62,7 @@ const i18n = getI18N({currentLocale});
 </header>
 
 <!-- menu mobile -->
-<div id="mobile-menu" class="hidden w-full text-center left-0 px-6 py-6 border-y border-tertiary/20 dark:border-primary/20 bg-secondary dark:bg-primary absolute">
+<div id="mobile-menu" class="hidden w-full text-center left-0 px-6 py-8 border-y border-dashed border-tertiary/20 dark:border-primary/20 bg-secondary dark:bg-primary absolute">
   <nav class="flex flex-col text-sm text-tertiary dark:text-secondary gap-5">
     <a 
       href={getRelativeLocaleUrl(currentLocale ?? '', 'about')}
@@ -95,7 +95,7 @@ const i18n = getI18N({currentLocale});
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const iconPlus = document.querySelector('.icon-plus');

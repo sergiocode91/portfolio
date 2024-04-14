@@ -34,9 +34,6 @@ export default {
                 textDecorationStyle: "solid",
               },
             },
-            p: {
-              fontSize: "1rem",
-            },
             "h1,h2,h3,h4,h5,h6": {
               fontFamily: theme("fontFamily.serif"),
               fontWeight: 500,
@@ -71,7 +68,6 @@ export default {
             blockquote: {
               border: 0,
               fontFamily: theme("fontFamily.serif"),
-              fontSize: "1rem",
               fontStyle: "italic",
               fontWeight: "normal",
               color: theme("textColor.secondary"),

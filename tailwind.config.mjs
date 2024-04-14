@@ -43,7 +43,6 @@ export default {
               color: "rgb(var(--color-code-text))",
               padding: "0.25rem 0.5rem",
               "border-radius": "0.25rem",
-              "font-size": "1rem",
               "line-height": "1.5",
               "font-family":
                 "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
@@ -74,7 +73,6 @@ export default {
               lineHeight: 1.4,
               paddingLeft: 0,
               '@media (min-width: theme("screens.sm"))': {
-                fontSize: "1.66667em",
                 lineHeight: 1.3,
               },
             },

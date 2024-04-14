@@ -95,18 +95,20 @@ const i18n = getI18N({currentLocale});
 </div>
 
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const iconPlus = document.querySelector('.icon-plus');
-  const iconX = document.querySelector('.icon-x');
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconPlus = document.querySelector('.icon-plus');
+    const iconX = document.querySelector('.icon-x');
 
-  if (menuToggle && mobileMenu && iconPlus && iconX) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    
-      const isHidden = mobileMenu.classList.contains('hidden');
-      iconPlus.classList[isHidden ? 'remove' : 'add']('hidden');
-      iconX.classList[isHidden ? 'add' : 'remove']('hidden');
-    });
-  }
+    if (menuToggle && mobileMenu && iconPlus && iconX) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+
+        const isHidden = mobileMenu.classList.contains('hidden');
+        iconPlus.classList[isHidden ? 'remove' : 'add']('hidden');
+        iconX.classList[isHidden ? 'add' : 'remove']('hidden');
+      });
+    }
+  });
 </script>

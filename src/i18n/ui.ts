@@ -8,6 +8,7 @@ export const showDefaultLang = false;
 
 export const ui = {
   en: {
+    'nav.home': 'Home',
     'nav.about': 'About',
     'nav.blog': 'Blog',
     'nav.projects': 'Projects',
@@ -21,11 +22,13 @@ export const ui = {
 
 export const routes = {
   en: {
+    home: 'home',
     about: 'about',
     blog: 'blog',
     projects: 'projects',
   },
   es: {
+    home: 'inicio',
     about: 'sobre-mi',
     blog: 'blog',
     projects: 'proyectos',

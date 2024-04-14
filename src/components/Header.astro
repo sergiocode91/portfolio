@@ -23,6 +23,15 @@ const i18n = getI18N({currentLocale});
     </a>
     <nav class="hidden lg:flex text-sm gap-6">
       <a 
+        href={getRelativeLocaleUrl(currentLocale ?? '', '')}
+        class={`
+          font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1 
+          ${pathname === '/' ? 'underline decoration-dashed underline-offset-4 decoration-1 ' : ''}
+        `}
+      >
+        {translate('nav.home')}
+      </a>
+      <a 
         href={getRelativeLocaleUrl(currentLocale ?? '', 'about')}
         class={`
           font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1 
@@ -62,8 +71,17 @@ const i18n = getI18N({currentLocale});
 </header>
 
 <!-- menu mobile -->
-<div id="mobile-menu" class="hidden w-full text-center left-0 px-6 py-8 border-y border-dashed border-tertiary/20 dark:border-primary/20 bg-secondary dark:bg-primary absolute">
+<div id="mobile-menu" class="hidden w-full text-center left-0 px-6 py-6 border-y border-dashed border-tertiary/20 dark:border-primary/20 bg-secondary dark:bg-primary absolute">
   <nav class="flex flex-col text-sm text-tertiary dark:text-secondary gap-5">
+    <a 
+      href={getRelativeLocaleUrl(currentLocale ?? '', '')}
+      class={`
+        font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1 
+        ${pathname === '/' ? 'underline decoration-dashed underline-offset-4 decoration-1 ' : ''}
+      `}
+    >
+      {translate('nav.home')}
+    </a>
     <a 
       href={getRelativeLocaleUrl(currentLocale ?? '', 'about')}
       class={`

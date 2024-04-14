@@ -1,4 +1,7 @@
 {
+  "MENU_BUTTON" : {
+    "MENU": "Menú"
+  },
   "HOME": {
     "GREETING": "Hey, Soy Sergio!",
     "INTRODUCTION": "Software Developer con más de 8 años de experiencia y creador de contenido. Mi objetivo es mejorar tu aprendizaje y mostrarte cómo la programación puede transformar tu vida!"

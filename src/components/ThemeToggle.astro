@@ -1,3 +1,8 @@
+<button id="theme-toggle">
+  <div class="icon-dark hidden w-3 h-3 rounded-full bg-secondary"></div>
+  <div class="icon-light w-3 h-3 rounded-full bg-primary"></div>
+</button>
+
 <script>
   document.addEventListener("astro:page-load", () => {
     const getTheme = (): "light" | "dark" => {
@@ -30,8 +35,3 @@
     });
   });
 </script>
-
-<button id="theme-toggle">
-  <div class="icon-dark hidden w-3 h-3 rounded-full bg-secondary"></div>
-  <div class="icon-light w-3 h-3 rounded-full bg-primary"></div>
-</button>

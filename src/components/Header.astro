@@ -1,11 +1,10 @@
 ---
+import { getI18N } from '@/i18n';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
-import { Plus } from 'lucide-astro';
+import { Plus, X } from 'lucide-astro';
 import ThemeToggle from '@/components/ThemeToggle.astro';
-
-
 
 const pathname = new URL(Astro.request.url).pathname;
 
@@ -13,6 +12,7 @@ const lang = getLangFromUrl(Astro.url);
 const translate = useTranslations(lang);
 
 const { currentLocale } = Astro;
+const i18n = getI18N({currentLocale});
 ---
 
 <header class="py-5">
@@ -51,11 +51,62 @@ const { currentLocale } = Astro;
       </a>
     </nav>
     <div class="flex space-x-5">
-      <div class="flex lg:hidden items-center font-secondary text-base text-tertiary dark:text-secondary">
-        Menu <Plus class="w-4 h-4 ml-1" />
+      <div id="menu-toggle" class="flex lg:hidden items-center font-secondary text-base text-tertiary dark:text-secondary cursor-pointer">
+        {i18n.MENU_BUTTON.MENU} 
+        <Plus class="w-4 h-4 ml-1 icon-plus" />
+        <X class="w-4 h-4 ml-1 icon-x hidden" />
       </div>
       <ThemeToggle>
     </div>
   </div>
 </header>
- 
+
+<!-- menu mobile -->
+<div id="mobile-menu" class="hidden w-full text-center left-0 px-6 py-6 border-y border-tertiary/20 dark:border-primary/20 bg-secondary dark:bg-primary absolute">
+  <nav class="flex flex-col text-sm text-tertiary dark:text-secondary gap-5">
+    <a 
+      href={getRelativeLocaleUrl(currentLocale ?? '', 'about')}
+      class={`
+        font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1 
+        ${pathname.startsWith('/about') ? 'underline decoration-dashed underline-offset-4 decoration-1 ' : ''}
+      `}
+    >
+      {translate('nav.about')}
+    </a>
+    <a 
+      href={getRelativeLocaleUrl(currentLocale ?? '', 'blog')}
+      class={`
+        font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1
+        ${pathname.startsWith('/blog') ? 'underline decoration-dashed underline-offset-4 decoration-1 ' : ''}
+      `}
+    >
+      {translate('nav.blog')}
+    </a>
+    <a 
+      href={getRelativeLocaleUrl(currentLocale ?? '', 'projects')}
+      class={`
+        font-secondary text-base hover:underline hover:decoration-dashed hover:underline-offset-4 hover:decoration-1
+        ${pathname.startsWith('/projects') ? 'underline decoration-dashed underline-offset-4 decoration-1 ' : ''}
+      `}
+    >
+      {translate('nav.projects')}
+    </a>
+  </nav>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconPlus = document.querySelector('.icon-plus');
+  const iconX = document.querySelector('.icon-x');
+
+  if (menuToggle && mobileMenu && iconPlus && iconX) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    
+      const isHidden = mobileMenu.classList.contains('hidden');
+      iconPlus.classList[isHidden ? 'remove' : 'add']('hidden');
+      iconX.classList[isHidden ? 'add' : 'remove']('hidden');
+    });
+  }
+</script>

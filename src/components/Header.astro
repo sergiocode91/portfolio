@@ -2,7 +2,10 @@
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
+import { Plus } from 'lucide-astro';
 import ThemeToggle from '@/components/ThemeToggle.astro';
+
+
 
 const pathname = new URL(Astro.request.url).pathname;
 
@@ -47,7 +50,12 @@ const { currentLocale } = Astro;
         {translate('nav.projects')}
       </a>
     </nav>
-    <ThemeToggle>
+    <div class="flex space-x-5">
+      <div class="flex lg:hidden items-center font-secondary text-base text-tertiary dark:text-secondary">
+        Menu <Plus class="w-4 h-4 ml-1" />
+      </div>
+      <ThemeToggle>
+    </div>
   </div>
 </header>
  

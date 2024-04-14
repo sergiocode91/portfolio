@@ -2,6 +2,9 @@
   "MENU_BUTTON" : {
     "MENU": "Menu"
   },
+  "TITLE_LAYOUT": {
+    "GREETING": "I'm Sergio! 👋 | Software Developer"
+  },
   "HOME": {
     "GREETING": "Hey, I'm Sergio!",
     "INTRODUCTION": "Software Developer with more than 8 years of experience and content creator. My goal is to enhance your learning and show you how programming can transform your life!"

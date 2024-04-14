@@ -16,7 +16,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({currentLocale});
 ---
 
-<Layout title="Soy Sergio! 👋 | Software Developer">
+<Layout title={i18n.TITLE_LAYOUT.GREETING}>
   <main class="py-10 lg:py-16">
     <Hero />
     <!-- section -->

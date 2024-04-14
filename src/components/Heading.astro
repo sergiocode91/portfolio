@@ -3,11 +3,14 @@ type Props = {
   title: string;
   fontSize: string;
   isItalic?: boolean;
+  isPage?: boolean;
 };
 
-const { title, fontSize, isItalic } = Astro.props;
+const { title, fontSize, isItalic, isPage } = Astro.props;
 ---
 
-<h2 class={`font-medium font-secondary text-xl lg:text-${fontSize} text-tertiary dark:text-primary ${isItalic ? 'italic': ''} mb-10 lg:mb-16`}>
+<h2
+  class={`font-medium font-secondary ${isPage ? "text-3xl" : "text-xl"} lg:text-${fontSize} text-tertiary dark:text-primary ${isItalic ? "italic" : ""} mb-10 lg:mb-16`}
+>
   {title}
 </h2>

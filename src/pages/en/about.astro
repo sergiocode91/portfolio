@@ -1,5 +1,6 @@
 ---
 import { ArrowUpRight } from "lucide-astro";
+
 import {
   MailCheck,
   Linkedin,
@@ -47,12 +48,12 @@ const social = [
 
 <Layout title="Sobre mí | Software Developer">
   <main class="py-16">
-    <Heading title="Sobre mí" fontSize="4xl" />
-    <div class="flex flex-col gap-24">
+    <Heading title="About" fontSize="4xl" isPage />
+    <div class="flex flex-col gap-10 lg:gap-24">
       <!-- section -->
-      <section class="flex flex-row font-light leading-normal gap-9">
-        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">Sobre mí</h2>
-        <div class="flex flex-col w-full text-tertiary dark:text-primary gap-8">
+      <section class="flex flex-col lg:flex-row leading-normal gap-4 lg:gap-9">
+        <h2 class="w-32 text-tertiary dark:text-secondary">About</h2>
+        <div class="flex flex-col w-full text-sm lg:text-base text-tertiary dark:text-primary gap-4 lg:gap-8">
           <p>¡Hola mundo, soy Brian Ruiz!</p>
           <p>
             Me apasiona el diseño y siempre estoy buscando formas de
@@ -70,14 +71,14 @@ const social = [
         </div>
       </section>
       <!-- section -->
-      <section class="flex flex-row font-light leading-normal gap-9">
-        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">Conectar</h2>
-        <div class="flex flex-col w-full text-tertiary dark:text-primary gap-8">
+      <section class="flex flex-col lg:flex-row leading-normal gap-4 lg:gap-9">
+        <h2 class="w-32 text-tertiary dark:text-secondary">Connect</h2>
+        <div class="flex flex-col w-full text-sm lg:text-base text-tertiary dark:text-primary gap-4 lg:gap-8">
           <p>
             Have a question or just want to chat? Feel free to email me. Try
             finding me anywhere else at @brianruizy
           </p>
-          <div class="grid grid-cols-2 text-sm gap-2">
+          <div class="grid grid-cols-1 lg:grid-cols-2 text-sm mt-3 lg:mt-0 gap-2">
             {
               social.map(({ name, icon: Icon, link }: any): any => (
                 <a
@@ -97,9 +98,9 @@ const social = [
         </div>
       </section>
       <!-- section -->
-      <section class="flex flex-row font-light leading-normal gap-9">
-        <h2 class="w-32 font-normal text-tertiary dark:text-secondary">Experiencia</h2>
-        <div class="flex flex-col w-full text-tertiary dark:text-primary gap-8">
+      <section class="flex flex-col lg:flex-row leading-normal gap-4 lg:gap-9">
+        <h2 class="w-32 text-tertiary dark:text-secondary">Experience</h2>
+        <div class="flex flex-col w-full text-sm lg:text-base text-tertiary dark:text-primary gap-4 lg:gap-8">
           <p>Más de 5 años de experiencia en desarrollo profesional.</p>
           <p>
             Comencé mi carrera enseñando a otros a codificar, algo que siempre

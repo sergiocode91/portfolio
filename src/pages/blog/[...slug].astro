@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@/layouts/Layout.astro";
 import Author from "@/components/Author.astro";
 
 export async function getStaticPaths() {
@@ -21,9 +21,9 @@ const { Content } = await post.render();
 
 <Layout title={title}>
   <main class="py-16">
-    <div class="flex flex-col gap-4 lg:gap-8">
+    <div class="flex flex-col gap-8">
       <h1 class="font-secondary text-3xl lg:text-4xl text-tertiary dark:text-primary">{title}</h1>
-      <p class="text-sm lg:text-base text-tertiary dark:text-secondary leading-normal mb-4 lg:mb-0">{description}</p>
+      <p class="text-tertiary dark:text-secondary leading-normal">{description}</p>
       <Author
         author={author}
         authorImage={authorImage}
@@ -35,7 +35,7 @@ const { Content } = await post.render();
       <img class="rounded-lg" src={imageUrl} alt={title} />
     </div>
   
-    <div class="text-sm lg:text-base text-tertiary dark:text-secondary prose prose-green prose-md md:prose-lg min-w-full">
+    <div class="font-light text-tertiary dark:text-secondary prose prose-green prose-md md:prose-lg min-w-full">
       <Content />
     </div>
   </main>

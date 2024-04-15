@@ -12,8 +12,8 @@ const posts = (await getCollection("blog"))
   .slice(0, 3);
 ---
 
-<Layout title="Soy Sergio! 👋 | Software Developer">
-  <main class="py-16">
+<Layout title="I'm Sergio! 👋 | Software Developer">
+  <main class="py-10 lg:py-16">
     <Hero />
     <!-- section -->
     <!-- <div class="pb-24">
@@ -23,9 +23,9 @@ const posts = (await getCollection("blog"))
     </div> -->
     <!-- section -->
     <div class="mb-24 last:mb-0">
-      <Heading title="Publicaciones" fontSize="2xl" isItalic />
+      <Heading title="Publications" fontSize="2xl" isItalic />
       <Posts posts={posts} />
-      <Button href="/blog" label="Ver más publicaciones" />
+      <Button href="/blog" label="View all Posts" />
     </div>
   </main>
 </Layout>

@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import { getI18N } from "@/i18n";
 
 import Layout from "@/layouts/Layout.astro";
 import Posts from "@/layouts/Posts.astro";
@@ -11,13 +10,10 @@ import Button from "@/components/Button.astro";
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.createdDate.valueOf() - a.data.createdDate.valueOf())
   .slice(0, 3);
-
-const { currentLocale } = Astro;
-const i18n = getI18N({currentLocale});
 ---
 
-<Layout title={i18n.TITLE_LAYOUT.GREETING}>
-  <main class="py-10 lg:py-16">
+<Layout title="Soy Sergio! 👋 | Software Developer">
+  <main class="py-16">
     <Hero />
     <!-- section -->
     <!-- <div class="pb-24">
@@ -27,9 +23,9 @@ const i18n = getI18N({currentLocale});
     </div> -->
     <!-- section -->
     <div class="mb-24 last:mb-0">
-      <Heading title={i18n.HEADING.PUBLICATIONS} fontSize="2xl" isItalic />
+      <Heading title="Publicaciones" fontSize="2xl" isItalic />
       <Posts posts={posts} />
-      <Button href="/blog" label={i18n.BUTTONS.SEE_PUBLICATIONS} />
+      <Button href="/blog" label="Ver más publicaciones" />
     </div>
   </main>
 </Layout>

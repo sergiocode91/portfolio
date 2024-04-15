@@ -2,27 +2,11 @@
   "MENU_BUTTON" : {
     "MENU": "Menu"
   },
-  "TITLE_LAYOUT": {
-    "GREETING": "I'm Sergio! 👋 | Software Developer"
-  },
   "HOME": {
     "GREETING": "Hey, I'm Sergio!",
     "INTRODUCTION": "Software Developer with more than 8 years of experience and content creator. My goal is to enhance your learning and show you how programming can transform your life!"
   },
-  "BUTTONS": {
-    "LETS_TALK": "Let's Talk",
-    "SEE_PUBLICATIONS": "View all Posts"
-  },
-  "HEADING": {
-    "PUBLICATIONS": "Publications"
-  },
-  "ABOUT": {
-    "TITLE_PAGE": "About",
-    "ABOUT_SECTION": "About",
-    "CONNECT_SECTION": "Connect",
-    "EXPERIENCE_SECTION": "Experience"
-  },
-  "PROJECTS": {
-    "TITLE_PAGE": "Projects"
+  "HERO_BUTTONS": {
+    "LETS_TALK": "Let's Talk"
   }
 }

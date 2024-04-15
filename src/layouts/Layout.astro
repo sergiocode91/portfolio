@@ -3,17 +3,20 @@ import '@fontsource-variable/newsreader';
 import '@fontsource-variable/inter';
 
 import { ViewTransitions } from 'astro:transitions';
-import { getI18N } from '@/i18n';
 
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 interface Props {
-	title: string;
+	title?: string;
+	description?: string;
+	image?: { src: string; alt?: string };
 }
 
 const { title } = Astro.props;
-
 const { currentLocale } = Astro
+
+const { description = '', image = '' } = Astro.props;
+const resolvedImage = image ? { src: image.src, alt: image.alt } : null;
 ---
 
 <!doctype html>
@@ -22,6 +25,12 @@ const { currentLocale } = Astro
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
+		<!-- Open Graph tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{resolvedImage?.src && <meta property="og:image" content={resolvedImage.src} />}
+		{resolvedImage?.alt && <meta property="og:image:alt" content={resolvedImage.alt} />}	
+		<!-- End Open Graph tags -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>

@@ -12,11 +12,8 @@ interface Props {
 	image?: { src: string; alt?: string };
 }
 
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
 const { currentLocale } = Astro
-
-const { description = '', image = '' } = Astro.props;
-const resolvedImage = image ? { src: image.src, alt: image.alt } : null;
 ---
 
 <!doctype html>
@@ -25,12 +22,12 @@ const resolvedImage = image ? { src: image.src, alt: image.alt } : null;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<!-- Open Graph tags -->
+		<!-- Open Graph Meta Tags -->
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		{resolvedImage?.src && <meta property="og:image" content={resolvedImage.src} />}
-		{resolvedImage?.alt && <meta property="og:image:alt" content={resolvedImage.alt} />}	
-		<!-- End Open Graph tags -->
+		<meta property="og:description" content={description ? description : ''} />
+		<meta property="og:image" content={image ? image.src : ''} />
+		<meta property="og:url" content={Astro.url} />
+		<!-- End Open Graph Meta Tags -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>

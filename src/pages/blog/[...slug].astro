@@ -19,7 +19,7 @@ const { title, description, imageUrl, author, authorImage, createdDate } = post.
 const { Content } = await post.render();
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description} image={imageUrl}>
   <main class="py-16">
     <div class="flex flex-col gap-8">
       <h1 class="font-secondary text-3xl lg:text-4xl text-tertiary dark:text-primary">{title}</h1>

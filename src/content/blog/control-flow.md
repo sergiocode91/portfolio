@@ -26,7 +26,7 @@ Esta nueva forma de escribir condiciones es un soplo de aire fresco que simplifi
 
 Pero espera, ¿qué sucede si necesitas un poco más, como añadir un "else" a la ecuación? Angular 17 lo tiene cubierto:
 
-> Si te estás acostumbrando a la nueva sintaxis, piensa cómo estructurarías un bloque if-else en JavaScript y simplemente añade un @ delante de las palabras clave.
+Si te estás acostumbrando a la nueva sintaxis, piensa cómo estructurarías un bloque if-else en JavaScript y simplemente añade un @ delante de las palabras clave.
 
 
 ```javascript

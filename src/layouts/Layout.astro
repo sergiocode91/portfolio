@@ -13,6 +13,9 @@ interface Props {
 }
 
 const { title, description, image } = Astro.props;
+const baseURL = "https://www.sergiocode.dev";
+const completeImageUrl = image ? `${baseURL}${image}` : `${baseURL}/blog-placeholder.jpeg`;
+
 const { currentLocale } = Astro
 ---
 
@@ -24,8 +27,8 @@ const { currentLocale } = Astro
 		<meta name="viewport" content="width=device-width" />
 		<!-- Open Graph Meta Tags -->
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description ? description : ''} />
-		<meta property="og:image" content={'https://www.sergiocode.dev/blog-placeholder.jpeg'} />
+		<meta property="og:description" content={description ? description : 'Bienvenido a sergiocode.dev, donde comparto mis conocimientos y experiencias sobre desarrollo web y programación.'} />
+		<meta property="og:image" content={completeImageUrl} />
 		<meta property="og:url" content={Astro.url} />
 		<!-- End Open Graph Meta Tags -->
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

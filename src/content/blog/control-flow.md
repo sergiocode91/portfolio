@@ -1,17 +1,15 @@
 ---
-title: "Instalar NVM en Ubuntu 20.04"
+title: "Control Flow en Angular 17: Todo lo que Necesitas Saber"
 createdDate: "2021-09-19T01:19:52.704Z"
 description:
-  "Choosing the right framework for your web project is a critical decision
-  that can significantly impact the development process and the success of
-  your project."
+  "Explora las nuevas directivas de control de flujo en Angular 17, incluyendo @if, @for, @empty, y @switch. Aprende cómo simplificar y optimizar tu código con ejemplos claros."
 imageUrl: "/blog-placeholder.jpeg"
 tags: ["astro", "javascript"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+Hoy vamos a sumergirnos en algunas de las adiciones más emocionantes de Angular 17: las nuevas directivas de control flow. Angular continúa evolucionando, y con la versión 17, tenemos herramientas aún más potentes para construir aplicaciones dinámicas y eficientes. Vamos a explorar las nuevas directivas @if, @for, @empty, y @switch, comparándolas con sus antecesores y viendo cómo pueden simplificar nuestro código.
 
 ## Headings
 
@@ -26,7 +24,7 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 ## Syntax
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -36,3 +34,4 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
     <p>Test</p>
   </body>
 </html>
+```

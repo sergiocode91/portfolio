@@ -65,13 +65,13 @@ export default {
               content: "none",
             },
             blockquote: {
-              border: 0,
-              fontFamily: theme("fontFamily.serif"),
-              fontStyle: "italic",
-              fontWeight: "normal",
+              borderLeft: "2px solid #B4B4B4",
+              fontStyle: "normal",
+              fontWeight: "400",
+              fontSize: "1rem",
               color: theme("textColor.secondary"),
               lineHeight: 1.4,
-              paddingLeft: 0,
+              paddingLeft: "1rem",
               '@media (min-width: theme("screens.sm"))': {
                 lineHeight: 1.3,
               },
@@ -81,13 +81,12 @@ export default {
         lg: {
           css: {
             blockquote: {
-              paddingLeft: 0,
+              paddingLeft: "1rem",
             },
           },
         },
       }),
     },
   },
-  plugins: [],
   plugins: [require("@tailwindcss/typography")],
 };

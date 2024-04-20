@@ -1,15 +1,7 @@
 ---
 import FormattedDate from "@/components/FormattedDate.astro";
 
-type Props = {
-  author: string;
-  authorImage: string;
-  createdDate: string;
-  minutesRead: string;
-};
-
 const { author, authorImage, createdDate, minutesRead } = Astro.props;
-
 ---
 
 <div class="flex items-center">

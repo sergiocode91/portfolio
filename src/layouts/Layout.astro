@@ -41,13 +41,6 @@ const { currentLocale } = Astro;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-
-    <script>
-      if (localStorage.theme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    </script>
-    <script src="../../src/scripts/copyCodeBlock.js"></script>
   </head>
   <body class="bg-secondary dark:bg-primary">
     <main class="w-full max-w-[800px] mx-auto px-6">
@@ -56,6 +49,13 @@ const { currentLocale } = Astro;
       <slot />
       <Footer />
     </main>
+
+    <script>
+      if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script src="../../src/scripts/copyCodeBlock.js"></script>
   </body>
 </html>
 

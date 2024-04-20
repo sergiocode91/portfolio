@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -40,16 +39,13 @@ export default {
             },
             code: {
               "background-color": "rgb(228 228 231 / .05)",
-              color: "#171717",
+              color: "#BD976A",
               padding: "2px 8px",
               "border-radius": "4px",
               "margin": "0 3px",
               "font-weight": "400",
               "font-family":
                 "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
-              ".dark &": {
-                color: "#BD976A",
-              },
             },
             "ol > li::before": {
               color: "rgb(var(--color-text-bold))",

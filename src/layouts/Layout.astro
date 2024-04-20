@@ -1,82 +1,95 @@
 ---
-import '@fontsource-variable/newsreader';
-import '@fontsource-variable/inter';
+import "@fontsource-variable/newsreader";
+import "@fontsource-variable/inter";
 
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 
-import Header from '@/components/Header.astro';
-import Footer from '@/components/Footer.astro';
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 interface Props {
-	title?: string;
-	description?: string;
-	image?: { src: string; alt?: string };
+  title?: string;
+  description?: string;
+  image?: { src: string; alt?: string };
 }
 
 const { title, description, image } = Astro.props;
 const baseURL = "https://www.sergiocode.dev";
-const completeImageUrl = image ? `${baseURL}${image}` : `${baseURL}/blog-placeholder.jpeg`;
+const completeImageUrl = image
+  ? `${baseURL}${image}`
+  : `${baseURL}/blog-placeholder.jpeg`;
 
-const { currentLocale } = Astro
+const { currentLocale } = Astro;
 ---
 
 <!doctype html>
 <html lang={currentLocale}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<!-- Open Graph Meta Tags -->
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description ? description : 'Bienvenido a sergiocode.dev, donde comparto mis conocimientos y experiencias sobre desarrollo web y programación.'} />
-		<meta property="og:image" content={completeImageUrl} />
-		<meta property="og:url" content={Astro.url} />
-		<!-- End Open Graph Meta Tags -->
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content={description
+        ? description
+        : "Bienvenido a sergiocode.dev, donde comparto mis conocimientos y experiencias sobre desarrollo web y programación."}
+    />
+    <meta property="og:image" content={completeImageUrl} />
+    <meta property="og:url" content={Astro.url} />
+    <!-- End Open Graph Meta Tags -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
 
-		<script>
-			if (localStorage.theme === 'dark') {
-					document.documentElement.classList.add('dark');
-			}
-		</script>
-	</head>
-	<body class="bg-secondary dark:bg-primary">
-		<main class="w-full max-w-[800px] mx-auto px-6">
-			<ViewTransitions />
-			<Header />
-			<slot />
-			<Footer />
-		</main>
-	</body>
+    <script>
+      if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script src="../../src/scripts/copyCodeBlock.js"></script>
+  </head>
+  <body class="bg-secondary dark:bg-primary">
+    <main class="w-full max-w-[800px] mx-auto px-6">
+      <ViewTransitions />
+      <Header />
+      <slot />
+      <Footer />
+    </main>
+  </body>
 </html>
 
 <style is:global>
-	html {
-		font-family: 'Inter Variable', system-ui, sans-serif;
-		font-weight: normal;
-		-webkit-font-smoothing: antialiased;
-	}
+  html {
+    font-family: "Inter Variable", system-ui, sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+  }
 
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  .copy-button {
+    font-size: 12px;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 
-	.dark .prose h1,
-	.dark .prose h2,
-	.dark .prose h3,
-	.dark .prose h4,
-	.dark .prose h5,
-	.dark .prose h6 {
-		@apply text-primary;
-	}
-
+  .dark .prose h1,
+  .dark .prose h2,
+  .dark .prose h3,
+  .dark .prose h4,
+  .dark .prose h5,
+  .dark .prose h6 {
+    @apply text-primary;
+  }
 </style>

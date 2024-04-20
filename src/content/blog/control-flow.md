@@ -1,12 +1,13 @@
 ---
 title: "Control Flow en Angular 17: Todo lo que Necesitas Saber"
-createdDate: "2021-09-19T01:19:52.704Z"
+createdDate: "2024-04-04T19:01:35.334Z"
 description:
   "Explora las nuevas directivas de control de flujo en Angular 17, incluyendo @if, @for, @empty, y @switch. Aprende cómo simplificar y optimizar tu código con ejemplos claros."
 imageUrl: "/blog-placeholder.jpeg"
 tags: ["astro", "javascript"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
+published: true
 ---
 Hoy vamos a sumergirnos en algunas de las adiciones más emocionantes de Angular 17: las nuevas directivas de control flow. Angular continúa evolucionando, y con la versión 17, tenemos herramientas aún más potentes para construir aplicaciones dinámicas y eficientes. Vamos a explorar las nuevas directivas @if, @for, @empty, y @switch, comparándolas con sus antecesores y viendo cómo pueden simplificar nuestro código.
 
@@ -18,7 +19,6 @@ Imagina que quieres poner una condición en tu código, pero sin complicaciones.
 @if (condicion) {
   <div>Aquí va tu contenido</div>
 }
-
 ```
 Esta nueva forma de escribir condiciones es un soplo de aire fresco que simplifica la enseñanza y mejora dramáticamente la claridad del código. Es casi como escribir una función en JavaScript, pero con un giro especial: ese pequeño @ al principio que marca toda la diferencia.
 
@@ -97,4 +97,4 @@ Y si no encuentra su alma gemela, y no hay un @default para llamar, simplemente 
 
 ## Conclusión
 
-Angular 17 te simplifica la vida con sus directivas intuitivas como @if, @for, @empty y @switch, que hacen tu código más limpio y eficiente. ¡Dale una oportunidad a estas herramientas y revitaliza tus desarrollo!
+Angular 17 te simplifica la vida con sus directivas intuitivas como `@if`, `@for`, `@empty` y `@switch`, que hacen tu código más limpio y eficiente. ¡Dale una oportunidad a estas herramientas y revitaliza tus desarrollo!

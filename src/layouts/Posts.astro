@@ -11,23 +11,29 @@ type Post = {
     description: string;
     createdDate: string;
     author: string;
+    published: boolean;
   }
 };
 
 const { posts } = Astro.props;
+
+const sortPosts = posts
+  .filter((post: Post) => post.data.published)
+  .sort((a: Post, b: Post) => {
+    return new Date(b.data.createdDate).getTime() - new Date(a.data.createdDate).getTime();
+  });
 ---
 
 <div>
   {
-    posts.map((post: Post) => (
-      <div>
-        <Card
-          title={post?.data.title}
-          description={post?.data.description}
-          createdDate={post?.data.createdDate}
-          slug={post?.slug}
-        />
-      </div>
+    sortPosts.map((post: Post) => (
+      <Card
+        title={post?.data.title}
+        description={post?.data.description}
+        createdDate={post?.data.createdDate}
+        slug={post?.slug}
+      />
     ))
   }
 </div>
+  

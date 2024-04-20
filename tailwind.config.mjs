@@ -39,13 +39,17 @@ export default {
               fontWeight: 500,
             },
             code: {
-              "background-color": "rgb(var(--color-code-bg))",
-              color: "rgb(var(--color-code-text))",
-              padding: "0.25rem 0.5rem",
-              "border-radius": "0.25rem",
-              "line-height": "1.5",
+              "background-color": "rgb(228 228 231 / .05)",
+              color: "#171717",
+              padding: "2px 8px",
+              "border-radius": "4px",
+              "margin": "0 3px",
+              "font-weight": "400",
               "font-family":
                 "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+              ".dark &": {
+                color: "#BD976A",
+              },
             },
             "ol > li::before": {
               color: "rgb(var(--color-text-bold))",

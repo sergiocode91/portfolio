@@ -3,8 +3,11 @@ import { getI18N } from '@/i18n';
 import { getLangFromUrl, useTranslations } from '@/i18n/utils';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
-import { Plus, X } from 'lucide-astro';
-import ThemeToggle from '@/components/ThemeToggle.astro';
+import { 
+  Plus,
+  X,
+  Github
+} from 'lucide-astro';
 
 const pathname = new URL(Astro.request.url).pathname;
 
@@ -59,13 +62,20 @@ const i18n = getI18N({currentLocale});
         {translate('nav.projects')}
       </a>
     </nav>
-    <div class="flex space-x-5">
-      <div id="menu-toggle" class="flex lg:hidden items-center font-secondary text-base text-tertiary dark:text-secondary cursor-pointer">
+    <div class="lg:hidden flex space-x-5">
+      <div id="menu-toggle" class="flex items-center font-secondary text-base text-tertiary dark:text-secondary cursor-pointer">
         {i18n.MENU_BUTTON.MENU} 
         <Plus class="w-4 h-4 ml-1 icon-plus" />
         <X class="w-4 h-4 ml-1 icon-x hidden" />
       </div>
-      <!-- <ThemeToggle> -->
+    </div>
+    <div class="hidden lg:flex items-center space-x-3">
+      <a href="https://twitter.com/sergiocode_" target="_blank">
+        <img src="/twitter.svg" alt="Twitter" class="w-4 h-4" />
+      </a>
+      <a href="https://github.com/sergiodev91" target="_blank">
+        <Github class="w-5 h-5" />
+      </a>
     </div>
   </div>
 </header>

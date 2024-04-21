@@ -3,7 +3,7 @@ title: "Descubre las Deferrable: El Futuro de Angular 17"
 createdDate: "2024-04-11T19:02:52.208Z"
 description:
   "Descubre cómo las Deferrable Views de Angular 17 pueden acelerar la carga inicial de tu app, optimizando componentes pesados y mejorando métricas críticas de rendimiento."
-imageUrl: "/deferrables-view.jpg"
+imageUrl: "/images/deferrables-view.jpeg"
 tags: ["astro", "javascript"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"

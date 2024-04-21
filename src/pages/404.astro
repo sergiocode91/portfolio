@@ -1,9 +1,15 @@
-<div class="flex flex-col items-center h-screen place-content-center bg-white px-4">
-  <h1 class="uppercase tracking-widest text-gray-500">404 | Not Found</h1>
-  <a
-    href="/"
-    class="mt-10 inline-block rounded px-5 py-2 text-xs font-medium text-gray-500 tracking-widest uppercase border border-gray-500"
-  >
-    Go Back Home
-  </a>
-</div>
+---
+import Base from "@/layouts/Base.astro";
+---
+
+<Base>
+  <div class="flex flex-col items-center place-content-center my-40 lg:my-60 bg-primary">
+    <h1 class="font-secondary text-xl lg:text-2xl text-primary">404 Ups! Página no encontrada.</h1>
+    <div class="my-4 text-center space-y-5">
+      <p class="text-sm lg:text-base text-secondary text-center">Parece que el enlace que seguiste podría estar roto o la página ha sido eliminada.</p>
+      <a href="/" class="inline-flex items-center justify-center font-secondary text-sm text-tertiary dark:text-primary leading-normal italic px-6 py-2 rounded-full transition gap-1 border border-tertiary dark:border-primary hover:bg-white/5">
+        Ir al inicio
+      </a>
+    </div>
+  </div>
+</Base>

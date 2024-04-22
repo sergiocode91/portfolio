@@ -3,7 +3,7 @@ title: "Control Flow en Angular 17: Todo lo que Necesitas Saber"
 createdDate: "2024-04-04T19:01:35.334Z"
 description:
   "Explora las nuevas directivas de control de flujo en Angular 17, incluyendo @if, @for, @empty, y @switch. Aprende cómo simplificar y optimizar tu código con ejemplos claros."
-imageUrl: "/images/control-flow.jpeg"
+imageUrl: "/images/control-flow-cover.webp"
 tags: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"

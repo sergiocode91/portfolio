@@ -4,7 +4,7 @@ createdDate: "2024-04-17T19:02:52.208Z"
 description:
   "Domina los blocks y triggers en Angular 17 para una carga óptima de contenido. Aprende a gestionar diferentes etapas del proceso de carga diferida de forma eficiente y efectiva."
 imageUrl: "/blog-placeholder.jpeg"
-tags: ["astro", "javascript"]
+tags: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 published: false

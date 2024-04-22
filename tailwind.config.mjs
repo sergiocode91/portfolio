@@ -25,12 +25,14 @@ export default {
           css: {
             a: {
               fontWeight: "normal",
+              color: theme("textColor.secondary"),
               textDecoration: "underline",
               textDecorationStyle: "dashed",
               textDecorationThickness: "1px",
-              textUnderlineOffset: "2px",
+              textUnderlineOffset: "1px",
+              textUnderlineOffset: "4px",
               "&:hover": {
-                textDecorationStyle: "solid",
+                color: theme("textColor.primary"),
               },
             },
             "h1,h2,h3,h4,h5,h6": {

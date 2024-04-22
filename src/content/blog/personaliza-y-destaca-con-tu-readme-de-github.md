@@ -3,7 +3,7 @@ title: "Personaliza y Destaca con tu README de GitHub"
 createdDate: "2024-04-22T19:01:35.334Z"
 description:
   "Explora las razones por las que un buen perfil es crucial y descubre consejos prácticos para destacar en la comunidad de desarrolladores."
-imageUrl: "/images/github-profile.jpeg"
+imageUrl: "/images/github-profile-cover.webp"
 tags: ["GitHub"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
@@ -35,6 +35,11 @@ Documentar tu progreso y reflexionar sobre tu código te ayuda a mejorar como de
 
 Cada perfil de GitHub puede ser mejorado con un archivo `README.md` que aparece automáticamente en tu perfil. Para empezar, simplemente crea un nuevo repositorio con el mismo nombre de tu usuario de GitHub y marca la opción `"Initialize this repository with a README".`
 
+<img src="/images/create-repository.webp" alt="Crear Repositorio de GitHub" style="border-radius: 8px;">
+
+El error que muestra la imagen es por que el repositorio ya fue inicializado con el mismo nombre de usuario, pero en tu caso no deberías tener problemas.
+
+
 ### - Paso 2: Hazlo personal
 
 Aquí es donde puedes dejar volar tu creatividad. Piensa en tu README como la cubierta de un libro sobre ti. ¿Qué debería incluir?
@@ -61,15 +66,21 @@ Las insignias (badges) y las estadísticas pueden agregar un toque profesional y
 
 * `Badges de tecnologías:` 
 
-Muestra las herramientas y lenguajes que dominas.
+Muestra las herramientas y lenguajes que dominas. Puedes encontrar una gran variedad de badges para tu perfil en el siguiente enlace: [Obtén badges para tu GitHub](https://github.com/Ileriayo/markdown-badges) Estos badges te permiten visualizar de manera elegante las tecnologías que utilizas en tus proyectos.
 
 * `Estadísticas de GitHub:` 
 
-Existen herramientas que te permiten mostrar estadísticas como tus lenguajes más usados o tu actividad de commits.
+Existen herramientas que te permiten mostrar estadísticas como tus lenguajes más usados o tu actividad de commits. [Obtén GitHub Stats](https://github.com/anuraghazra/github-readme-stats).
 
 ## Ejemplos inspiradores
 
 No dudes en buscar inspiración en los perfiles de otros desarrolladores. Ve lo que hacen otros, mezcla ideas, y encuentra tu propio estilo.
+
+
+<a href="https://github.com/sergiocode91" target="_blank">
+  <img src="/images/my-github.webp" alt="Perfil de GitHub" style="border-radius: 8px;">
+</a>
+
 
 ## Conclusión
 

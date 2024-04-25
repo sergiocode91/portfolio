@@ -1,32 +1,12 @@
 ---
 import Card from "../components/Card.astro";
 
-type Post = {
-  id: string;
-  slug: string;
-  body: string;
-  collection: string;
-  data: {
-    title: string;
-    description: string;
-    createdDate: string;
-    author: string;
-    published: boolean;
-  }
-};
-
 const { posts } = Astro.props;
-
-const sortPosts = posts
-  .filter((post: Post) => post.data.published)
-  .sort((a: Post, b: Post) => {
-    return new Date(b.data.createdDate).getTime() - new Date(a.data.createdDate).getTime();
-  });
 ---
 
 <div>
   {
-    sortPosts.map((post: Post) => (
+    posts.map((post: any) => (
       <Card
         title={post?.data.title}
         description={post?.data.description}

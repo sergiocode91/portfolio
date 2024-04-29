@@ -6,6 +6,11 @@ import { remarkReadingTime } from "./remark-reading-time.mjs";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), mdx()],
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es"],

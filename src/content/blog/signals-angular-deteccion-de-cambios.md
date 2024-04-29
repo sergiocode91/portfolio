@@ -1,9 +1,9 @@
 ---
-title: "Impulsa tus Proyectos Angular con Google Gemini"
+title: "Signals en Angular: El futuro de la detección de cambios"
 createdDate: "2024-04-29T19:01:35.334Z"
 description:
   "Aprende a potenciar tus aplicaciones Angular con la IA de Google Gemini, explorando su integración para mejorar la gestión y análisis de datos en tiempo real."
-imageUrl: "/images/impulsa-angular-con-google-gemini.webp"
+imageUrl: "/images/signals-angular-deteccion-de-cambios.webp"
 tags: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"

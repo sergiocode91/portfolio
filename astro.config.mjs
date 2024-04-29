@@ -1,16 +1,18 @@
 import { defineConfig } from "astro/config";
+import vercel from '@astrojs/vercel/serverless';
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), mdx()],
+  output: 'server',
   adapter: vercel({
     webAnalytics: {
       enabled: true,
     },
   }),
+  integrations: [tailwind(), mdx()],
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es"],

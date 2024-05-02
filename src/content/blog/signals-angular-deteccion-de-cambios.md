@@ -1,62 +1,174 @@
 ---
 title: "Signals en Angular: El futuro de la detección de cambios"
 createdDate: "2024-04-29T19:01:35.334Z"
-description:
-  "Aprende a potenciar tus aplicaciones Angular con la IA de Google Gemini, explorando su integración para mejorar la gestión y análisis de datos en tiempo real."
+description: "Explora cómo los Signals en Angular mejoran la detección de cambios, haciendo las aplicaciones más eficientes, responsivas y menos intrusiva."
 imageUrl: "/images/signals-angular-deteccion-de-cambios.webp"
 tags: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 published: false
 ---
-Google Gemini es un modelo de inteligencia artificial avanzado, diseñado para liderar en el ámbito de las tecnologías de IA. A diferencia de aplicaciones comunes, Gemini actúa como el motor que impulsa estas herramientas, con la capacidad de procesar texto, imágenes, audio y código. Esto lo hace multimodal, es decir, capaz de entender y analizar varios tipos de información simultáneamente, lo que lo convierte en la solución ideal para aplicaciones que requieren un análisis profundo y diversificado de información. 
+## El Renacimiento de Angular Según Sarah Drasner
 
-En este artículo, veremos cómo integrar esta poderosa IA en un proyecto Angular, desarrollando un buscador de verbos que no solo realiza búsquedas, sino que también analiza y proporciona todas sus formas.
+¡Hola! Hoy vamos a explorar una innovación emocionante en Angular: los `Signals`. Sarah Drasner, la Directora de Ingeniería en Google, nos ha dado pistas sobre cómo estas novedades están revitalizando Angular, haciendo nuestras aplicaciones más rápidas y responsivas.
 
-Ahora que hemos explorado el potencial de Google Gemini, vamos a poner manos a la obra y empezar a integrarlo en nuestro proyecto Angular. A continuación, te guiaré paso a paso en la configuración inicial y en cómo implementar un buscador de verbos que aproveche esta avanzada IA.
+En este artículo, exploramos cómo se utilizaron los `Signals` en proyectos Angular, volviéndolos más eficientes y atractivos. ¡Fue una actualización que definitivamente dio un giro a la forma de programar!
 
-## Paso a Paso: Integrando Google Gemini en tu Proyecto Angular
+## ¿Qué son los Signals?
 
-Ahora que hemos explorado el potencial de Google Gemini, vamos a poner manos a la obra y empezar a integrarlo en nuestro proyecto Angular. A continuación, te guiaré paso a paso en la configuración inicial.
+Piensa en los `Signals` como canales directos que permiten que ciertas partes de tu aplicación respondan a los cambios sin afectar al resto. Es como tener conversaciones privadas en una fiesta ruidosa: solo las personas implicadas necesitan prestar atención.
 
+## Detección de Cambios Hoy: Zone.js
 
-<!-- mostrar como obtener la api de gemini y su documentacion -->
+Tradicionalmente, Angular ha usado `Zone.js` para gestionar la actualización de componentes, un método efectivo pero pesado. `Zone.js` monitorea todas las actividades en la aplicación, lo que puede ralentizar el rendimiento a medida que esta crece. Además, presenta varias desventajas:
 
-## Creación de un Proyecto en Angular
+* **`Monkey Patching:`**
 
-Antes de integrar Google Gemini, necesitamos configurar nuestro entorno de Angular, aquí te explico cómo empezar uno desde cero.
+Modifica objetos del navegador de manera impredecible, complicando el diagnóstico de errores.
 
-### - Instalación de Angular CLI:
+* **`Sobrecarga:`**
 
-Si aún no tienes Angular CLI instalado, puedes instalarlo utilizando npm con el siguiente comando:
+Añade unos 100 KB, un peso considerable para componentes web ligeros.
 
-```shell
-> npm install -g @angular/cli
+* **`Limitaciones con Async/Await:`**
+
+Esto fuerza a Angular CLI a convertir async y await en promesas, aunque los navegadores modernos ya las soportan.
+
+* **`Chequeo Ineficiente:`**
+
+Angular revisa todo el árbol de componentes para detectar cambios, lo cual no es eficiente para actualizar componentes específicos.
+
+Los `Signals` solucionan estas desventajas permitiendo a Angular actualizar solo las partes necesarias de manera más eficiente y con menor sobrecarga.
+
+## Cómo Usar Signals en Angular
+
+Si estás utilizando Angular 16 o superior, ya puedes empezar a experimentar con `Signals`. Aquí tienes un ejemplo simple de cómo implementarlos:
+
+```javascript
+import { Signal } from '@angular/core';
+
+const count = signal(0); // Inicializa un signal con valor 0
+console.log('El contador está en: ' + count()); // Muestra el valor inicial del signal
 ```
 
-### - Creación de un Nuevo Proyecto:
+### - Actualizar un Signal
 
-Crea un nuevo proyecto Angular ejecutando el siguiente comando en tu terminal. Este comando construirá la estructura básica del proyecto y todas las dependencias necesarias.
+Para cambiar el valor, puedes usar el método `.set()` o `.update()` para modificar el valor basado en su estado anterior.
 
-```shell
-> ng new verb-finder
+```javascript
+count.set(3); // Establece el valor del signal a 3
+count.update(value => value + 1); // Incrementa el valor del signal en 1
 ```
 
-Sigue las instrucciones en pantalla para configurar tu proyecto, como la selección de opciones para el routing y los estilos CSS.
+## Signals Computados
 
-### - Acceso al Proyecto:
+Los `Signals` Computados observan otros `Signals` y actualizan automáticamente su valor en respuesta a los cambios. Son ideales para crear relaciones dinámicas dentro de tu aplicación.
 
-Una vez creado el proyecto, accede al directorio y abre el proyecto en tu editor de código con estos comandos:
-
-```shell
-> cd verb-finder
-> code .
+```javascript
+const count: WritableSignal<number> = signal(0);
+const dobleContador: Signal<number> = computed(() => count() * 2);
 ```
 
-### - Ejecución del Proyecto:
+En este ejemplo, dobleContador depende de count. Cada vez que count se actualiza, dobleContador también se actualizará automáticamente. Esta actualización es perezosa y memoizada, lo que significa que el valor derivado no se recalcula hasta que sea necesario, optimizando el rendimiento.
 
-Finalmente, ejecuta el proyecto con el siguiente comando:
+### - Utilizando Signals Computados
 
-```shell
-> ng serve
+Imagina que quieres mostrar un mensaje solo cuando es relevante:
+
+```javascript
+const mostrarContador = signal(false);
+const count = signal(0);
+const contadorCondicional = computed(() => {
+  if (mostrarContador()) {
+    return `El contador está en ${count()}.`;
+  } else {
+    return '¡No hay nada que ver aquí!';
+  }
+});
 ```
+
+Este ejemplo ilustra la flexibilidad y eficiencia de los `Signals Computados`. Cuando el Signal **mostrarContador** tiene el valor **false**, el Signal **count** no influye en absoluto, porque ni siquiera se consulta su valor.
+
+Esto significa que si cambias el valor de **count**, no afectará ni desencadenará ninguna actualización en **contadorCondicional**. Así, sólo se recalcula **contadorCondicional** cuando realmente es necesario, evitando trabajo innecesario y mejorando el rendimiento de la aplicación.
+
+## Uso de Signals en Formularios
+
+Aunque ngModel no soporta aún los `Signals` para binding bidireccional, puedes gestionarlo manualmente.
+
+En el formulario de ejemplo, tenemos dos campos de entrada que los usuarios utilizan para introducir las ciudades de origen y destino para una búsqueda de vuelos. Estos campos están gestionados por dos `Signals`, llamados **from** y **to**. Aquí te muestro mejor el ejemplo:
+
+```html
+<form>
+  <input [ngModel]="from()" (ngModelChange)="from.set($event)">
+  <input [ngModel]="to()" (ngModelChange)="to.set($event)">
+  <button (click)="search()">Buscar Vuelos</button>
+</form>
+```
+
+Para cada campo de entrada, vinculamos el valor del `Signal` usando **[ngModel]="from()"**, que devuelve el valor actual.
+
+Al cambiar el valor del campo, **(ngModelChange)="from.set($event)"** actualiza el Signal con el nuevo valor mediante **.set()**, permitiendo que el formulario siga siendo reactivo ante los cambios del usuario, a pesar de las restricciones de ngModel con `Signals`.
+
+## Signals en Effects
+
+Cuando trabajamos con `Signals` en effects, debemos tener cuidado especial para evitar la creación de ciclos indeseados.
+
+Imagina un efecto que lee el Signal **a** y actualiza el Signal **b**, mientras que otro efecto hace lo contrario. Esto podría llevar rápidamente a un ciclo infinito de actualizaciones, algo que queremos evitar a toda costa.
+
+### - Restricciones al Escribir en Signals dentro de Effects
+
+Por defecto, Angular no permite escribir directamente en un Signal dentro de un efecto para prevenir precisamente estos ciclos. Observemos un ejemplo donde intentamos sincronizar dos `Signals`:
+
+```javascript
+effect(() => {
+  // Intentar escribir en un signal aquí provocará un error
+  this.to.set(this.from());
+});
+```
+
+Este intento resultará en un error específico:
+
+```javascript
+ERROR Error: NG0600: Writing to signals is not allowed in a computed or an effect by default. Use allowSignalWrites in the CreateEffectOptions to enable this inside effects.
+```
+
+Para situaciones donde realmente necesitas escribir en un `Signal` dentro de un effect, puedes usar la opción **allowSignalWrites** para permitirlo explícitamente:
+
+```javascript
+effect(() => {
+  this.to.set(this.from());
+}, { allowSignalWrites: true });
+```
+
+### - Efectos Asincrónicos y Uso Indirecto
+
+Los efectos en Angular no tienen que ser instantáneos. En realidad, podemos hacer que operen en segundo plano, manejando tareas que no requieren una acción inmediata, como cargar datos de manera asíncrona.
+
+```javascript
+effect(async () => {
+  const flights = await this.flightService.findAsPromise(this.from(), this.to());
+  this.flights.set(flights);
+});
+```
+
+Este código muestra cómo un efecto asincrónico puede mejorar la eficiencia. Usando await, el efecto espera a que se complete una operación, como una búsqueda de vuelos, antes de actualizar un Signal.
+
+Angular maneja estas esperas eficazmente, permitiendo que otras partes de la aplicación continúen siendo rápidas y responsivas. Además, los `Signals` se pueden utilizar de manera más sutil para controlar las actualizaciones sin sobrecargar el sistema, ideal para cuando las acciones menores no deben iniciar procesos más grandes.
+
+### - El Arte del Debouncing con Signals
+
+Imagina que estás desarrollando una barra de búsqueda con autocompletado. Si cada letra ingresada por el usuario desencadenara una búsqueda completa, el sistema se sobrecargaría rápidamente. Para evitar esto, podemos usar `Signals` de manera indirecta para implementar debouncing, optimizando el proceso sin sacrificar la funcionalidad.
+
+```javascript
+effect(() => {
+  this.search();
+});
+```
+
+Este Effect espera antes de buscar, permitiendo que el usuario termine de escribir. Esto reduce las búsquedas y evita sobrecargar el sistema.
+
+## Conclusión
+
+¡Y ahí lo tienes! Los `Signals` transforman cómo gestionamos cambios en Angular, haciendo nuestras aplicaciones más eficientes y reactivas. 
+
+Si estás usando Angular 16 o superior, experimenta con esta herramienta innovadora y lleva tus proyectos al próximo nivel. ¡Descubre el poder de los `Signals` y revitaliza tus aplicaciones hoy mismo!

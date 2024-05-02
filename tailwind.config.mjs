@@ -66,6 +66,10 @@ export default {
             "code::after": {
               content: "none",
             },
+            strong: {
+              "font-weight": "500",
+              color: theme("textColor.primary"),
+            },
             blockquote: {
               borderLeft: "2px solid #B4B4B4",
               fontStyle: "normal",

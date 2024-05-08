@@ -1,5 +1,5 @@
 ---
-title: "Parte 2: Impulsa tus proyectos de Angular 17 con el Poder del @Defer con Blocks y Triggers"
+title: "Parte 2: "
 createdDate: "2024-04-17T19:02:52.208Z"
 description:
   "Domina los blocks y triggers en Angular 17 para una carga óptima de contenido. Aprende a gestionar diferentes etapas del proceso de carga diferida de forma eficiente y efectiva."

@@ -7,6 +7,7 @@ imageUrl: "/images/control-flow-cover.webp"
 tags: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
+slug: "control-flow"
 published: true
 ---
 Hoy vamos a sumergirnos en algunas de las adiciones más emocionantes de Angular 17: las nuevas directivas de control flow. Angular continúa evolucionando, y con la versión 17, tenemos herramientas aún más potentes para construir aplicaciones dinámicas y eficientes. Vamos a explorar las nuevas directivas @if, @for, @empty, y @switch, comparándolas con sus antecesores y viendo cómo pueden simplificar nuestro código.

@@ -6,6 +6,28 @@ import Author from "@/components/Author.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, imageUrl, author, authorImage, slug, createdDate, minutesRead  } = Astro.props;
+
+// async function fetchData() {
+//   const baseURL = 'http://localhost:3000';
+//   const response = await fetch(`${baseURL}/api/${encodeURIComponent(slug)}`);
+
+//   if (!response.ok) {
+//     throw new Error(`HTTP error! status: ${response.status}`);
+//   }
+
+//   const text = await response.text();  // Primero obtenemos el texto de la respuesta
+//   try {
+//     const data = JSON.parse(text);     // Intentamos parsear el texto como JSON
+//     return data;
+//   } catch (error) {
+//     console.error("Error parsing JSON:", error);
+//     console.log("Received text:", text);  // Logueamos el texto para ver qué fue lo que se recibió
+//     throw error;
+//   }
+// }
+
+// const postData = await fetchData();
+// console.log(postData);
 ---
 
 <Base title={title} description={description} image={imageUrl} >

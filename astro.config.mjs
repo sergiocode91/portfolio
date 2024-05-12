@@ -6,7 +6,6 @@ import { remarkReadingTime } from "./remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.sergiocode.dev",
   server: {
     port: 3000
   },

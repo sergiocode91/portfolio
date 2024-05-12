@@ -1,7 +1,7 @@
 ---
 import FormattedDate from "@/components/FormattedDate.astro";
 
-const { author, authorImage, createdDate, minutesRead } = Astro.props;
+const { author, authorImage, createdDate, viewsCount } = Astro.props;
 ---
 
 <div class="flex items-center">
@@ -9,7 +9,7 @@ const { author, authorImage, createdDate, minutesRead } = Astro.props;
   <div class="text-sm ml-4">
     <h2 class="text-tertiary dark:text-primary">{author}</h2>
     <p class="font-light text-tertiary dark:text-secondary">
-      <FormattedDate date={new Date(createdDate)} /> ·
+      <FormattedDate date={new Date(createdDate)} /> · {viewsCount} {viewsCount <= 1 ? 'vista' : 'vistas'}
     </p>
   </div>
 </div>

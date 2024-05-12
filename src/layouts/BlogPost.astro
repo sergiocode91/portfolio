@@ -7,27 +7,21 @@ type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, imageUrl, author, authorImage, slug, createdDate, minutesRead  } = Astro.props;
 
-// async function fetchData() {
-//   const baseURL = 'http://localhost:3000';
-//   const response = await fetch(`${baseURL}/api/${encodeURIComponent(slug)}`);
+async function fetchData() {
+  const baseURL = 'http://localhost:3000';
+  const response = await fetch(`${baseURL}/api/${encodeURIComponent(slug)}.json`);
 
-//   if (!response.ok) {
-//     throw new Error(`HTTP error! status: ${response.status}`);
-//   }
+  if (!response.ok) {
+    const text = await response.text();
+    console.error("Response body:", text);
+    throw new Error('Network response was not ok');
+  }
 
-//   const text = await response.text();  // Primero obtenemos el texto de la respuesta
-//   try {
-//     const data = JSON.parse(text);     // Intentamos parsear el texto como JSON
-//     return data;
-//   } catch (error) {
-//     console.error("Error parsing JSON:", error);
-//     console.log("Received text:", text);  // Logueamos el texto para ver qué fue lo que se recibió
-//     throw error;
-//   }
-// }
+  const data = await response.json();
+  return data;
+}
 
-// const postData = await fetchData();
-// console.log(postData);
+const { views_count } = await fetchData();
 ---
 
 <Base title={title} description={description} image={imageUrl} >
@@ -39,7 +33,7 @@ const { title, description, imageUrl, author, authorImage, slug, createdDate, mi
         author={author}
         authorImage={authorImage}
         createdDate={createdDate}
-        minutesRead={minutesRead}
+        viewsCount={views_count}
       />
     </div>
   

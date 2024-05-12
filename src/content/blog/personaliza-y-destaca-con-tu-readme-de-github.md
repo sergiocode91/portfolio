@@ -7,7 +7,6 @@ imageUrl: "/images/github-profile-cover.webp"
 tags: ["GitHub"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
-slug: "personaliza-y-destaca-con-tu-readme-de-github"
 published: true
 ---
 Hoy vamos a sumergirnos en un aspecto crucial pero a menudo subestimado de nuestra vida como desarrolladores: ¡nuestro perfil de GitHub! Piénsalo como la fachada de tu casa digital. ¿Quieres que luzca invitante y muestre lo mejor de ti, verdad? ¡Pues claro! Un perfil bien pulido no solo capta la atención sino que también puede abrirte puertas en tu carrera profesional. 

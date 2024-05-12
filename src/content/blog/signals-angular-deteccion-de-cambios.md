@@ -6,7 +6,6 @@ imageUrl: "/images/signals-angular-deteccion-de-cambios.webp"
 tags: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
-slug: "signals-angular-deteccion-de-cambios"
 published: false
 ---
 ## El Renacimiento de Angular Según Sarah Drasner

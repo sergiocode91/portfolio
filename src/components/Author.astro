@@ -1,15 +1,7 @@
 ---
 import FormattedDate from "@/components/FormattedDate.astro";
 
-const { author, authorImage, createdDate, slug } = Astro.props;
-
-const res = await fetch(`https://sergiocode.dev/api/${encodeURIComponent(slug)}.json`);
-
-if (!res.ok) {
-  console.error("Error fetching data:", res.status, res.statusText);
-  throw new Error('Network response was not ok');
-}
-const { views_count } = await res.json();
+const { author, authorImage, createdDate, minutesRead } = Astro.props;
 ---
 
 <div class="flex items-center">
@@ -17,7 +9,7 @@ const { views_count } = await res.json();
   <div class="text-sm ml-4">
     <h2 class="text-tertiary dark:text-primary">{author}</h2>
     <p class="font-light text-tertiary dark:text-secondary">
-      <FormattedDate date={new Date(createdDate)} /> · {views_count} {views_count <= 1 ? 'vista' : 'vistas'}
+      <FormattedDate date={new Date(createdDate)} /> · {minutesRead}
     </p>
   </div>
 </div>

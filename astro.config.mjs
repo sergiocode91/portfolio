@@ -1,18 +1,14 @@
 import { defineConfig } from "astro/config";
-import vercel from '@astrojs/vercel/serverless';
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
+import vercelStatic from '@astrojs/vercel/static';
 import { remarkReadingTime } from "./remark-reading-time.mjs";
 
 // https://astro.build/config
-export default defineConfig({ 
-  output: 'server',
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-    maxDuration: 8,
-  }),
+export default defineConfig({
+  site: "https://www.sergiocode.dev",
+  output: "static",
+  adapter: vercelStatic(),
   server: {
     port: 3000
   },

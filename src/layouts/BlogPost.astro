@@ -6,15 +6,6 @@ import Author from "@/components/Author.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, imageUrl, author, authorImage, slug, createdDate  } = Astro.props;
-
-
-const res = await fetch(`https://sergiocode.dev/api/${encodeURIComponent(slug)}.json`);
-
-if (!res.ok) {
-  console.error("Error fetching data:", res.status, res.statusText);
-  throw new Error('Network response was not ok');
-}
-const { views_count } = await res.json();
 ---
 
 <Base title={title} description={description} image={imageUrl} >
@@ -26,7 +17,7 @@ const { views_count } = await res.json();
         author={author}
         authorImage={authorImage}
         createdDate={createdDate}
-        viewsCount={views_count}
+        slug={slug}
       />
     </div>
   

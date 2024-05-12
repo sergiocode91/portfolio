@@ -7,7 +7,7 @@ type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, imageUrl, author, authorImage, slug, createdDate  } = Astro.props;
 
-const res = await fetch(`http://localhost:3000/api/${encodeURIComponent(slug)}.json`);
+const res = await fetch(`https://www.sergiocode.dev/api/${encodeURIComponent(slug)}.json`);
 const { views_count } = await res.json();
 ---
 

@@ -7,6 +7,7 @@ imageUrl: "/images/impulsa-angular-con-google-gemini.webp"
 tags: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
+slug: impulsa-angular-con-ia-geminis-google
 published: false
 ---
 Google Gemini es un modelo de inteligencia artificial avanzado, diseñado para liderar en el ámbito de las tecnologías de IA. A diferencia de aplicaciones comunes, Gemini actúa como el motor que impulsa estas herramientas, con la capacidad de procesar texto, imágenes, audio y código. Esto lo hace multimodal, es decir, capaz de entender y analizar varios tipos de información simultáneamente, lo que lo convierte en la solución ideal para aplicaciones que requieren un análisis profundo y diversificado de información. 

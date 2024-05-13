@@ -1,7 +1,49 @@
 ---
+import { supabase } from "lib/supabaseClient";
 import FormattedDate from "@/components/FormattedDate.astro";
 
-const { author, authorImage, createdDate, minutesRead } = Astro.props;
+const { author, authorImage, createdDate, minutesRead, slug } = Astro.props;
+
+async function incrementViews(articleId: string) {
+  const { data, error } = await supabase
+    .from('article_views')
+    .select('views')
+    .eq('article_id', articleId)
+    .single();
+
+  if (error) {
+    if (error.code === 'PGRST116') {
+      await supabase
+        .from('article_views')
+        .insert({ article_id: articleId, views: 1 });
+    } else {
+      console.error("Error incrementing views:", error);
+    }
+  } else if (data) {
+    await supabase
+      .from('article_views')
+      .update({ views: data.views + 1 })
+      .eq('article_id', articleId);
+  }
+}
+
+async function getViews(articleId: string) {
+  const { data, error } = await supabase
+    .from('article_views')
+    .select('views')
+    .eq('article_id', articleId)
+    .single();
+
+  if (error) {
+    console.error("Error fetching views:", error);
+    return 0;
+  }
+
+  return data ? data.views : 0;
+}
+
+const views = await getViews(slug);
+incrementViews(slug);
 ---
 
 <div class="flex items-center">
@@ -9,7 +51,7 @@ const { author, authorImage, createdDate, minutesRead } = Astro.props;
   <div class="text-sm ml-4">
     <h2 class="text-tertiary dark:text-primary">{author}</h2>
     <p class="font-light text-tertiary dark:text-secondary">
-      <FormattedDate date={new Date(createdDate)} /> · {minutesRead}
+      <FormattedDate date={new Date(createdDate)} /> · {views} Vistas
     </p>
   </div>
 </div>

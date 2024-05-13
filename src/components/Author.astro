@@ -13,17 +13,25 @@ async function incrementViews(articleId: string) {
 
   if (error) {
     if (error.code === 'PGRST116') {
-      await supabase
+      const { data: insertData, error: insertError } = await supabase
         .from('article_views')
         .insert({ article_id: articleId, views: 1 });
+
+      if (insertError) {
+        console.error("Error inserting views:", insertError);
+      }
     } else {
-      console.error("Error incrementing views:", error);
+      console.error("Error fetching views:", error);
     }
   } else if (data) {
-    await supabase
+    const { error: updateError } = await supabase
       .from('article_views')
       .update({ views: data.views + 1 })
       .eq('article_id', articleId);
+
+    if (updateError) {
+      console.error("Error updating views:", updateError);
+    }
   }
 }
 
@@ -42,8 +50,21 @@ async function getViews(articleId: string) {
   return data ? data.views : 0;
 }
 
-const views = await getViews(slug);
-incrementViews(slug);
+// Ejecutar el código de consultas y actualización solo en el cliente
+if (typeof window !== "undefined") {
+  window.addEventListener('DOMContentLoaded', async () => {
+    try {
+      const views = await getViews(slug);
+      await incrementViews(slug);
+      const viewsElement = document.getElementById('views');
+      if (viewsElement) {
+        viewsElement.innerText = `Vistas: ${views}`;
+      }
+    } catch (error) {
+      console.error("Error updating views:", error);
+    }
+  });
+}
 ---
 
 <div class="flex items-center">
@@ -51,7 +72,11 @@ incrementViews(slug);
   <div class="text-sm ml-4">
     <h2 class="text-tertiary dark:text-primary">{author}</h2>
     <p class="font-light text-tertiary dark:text-secondary">
-      <FormattedDate date={new Date(createdDate)} /> · {views} Vistas
+      <FormattedDate date={new Date(createdDate)} /> ·
     </p>
   </div>
+</div>
+
+<div id="views" class="text-sm lg:text-base text-tertiary dark:text-secondary leading-normal mt-4">
+  Vistas: 0
 </div>

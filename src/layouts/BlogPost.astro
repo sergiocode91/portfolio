@@ -5,7 +5,7 @@ import Author from "@/components/Author.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, imageUrl, author, authorImage, slug, createdDate, minutesRead  } = Astro.props;
+const { title, description, imageUrl, author, authorImage, createdDate, minutesRead  } = Astro.props;
 ---
 
 <Base title={title} description={description} image={imageUrl} >

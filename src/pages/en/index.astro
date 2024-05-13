@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@/layouts/Base.astro";
+import Posts from "@/layouts/Posts.astro";
+import Hero from "@/components/Hero.astro";
+import Heading from "@/components/Heading.astro";
+import Button from "@/components/Button.astro";
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.createdDate.valueOf() - a.data.createdDate.valueOf())
+  .slice(0, 3);
+---
+
+<Layout title="I'm Sergio! 👋 | Software Developer">
+  <main class="py-10 lg:py-16">
+    <Hero />
+    <!-- section -->
+    <!-- <div class="pb-24">
+      <Heading title="Proyectos" fontSize="2xl" />
+      <Posts posts={posts} />
+      <Button href="/projects" label="Ver más proyectos" />
+    </div> -->
+    <!-- section -->
+    <div class="mb-24 last:mb-0">
+      <Heading title="Publications" fontSize="2xl" isItalic />
+      <Posts posts={posts} />
+      <Button href="/blog" label="View all Posts" />
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@/layouts/Base.astro";
+import Posts from "@/layouts/Posts.astro";
+import Heading from "@/components/Heading.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.createdDate.valueOf() - a.data.createdDate.valueOf()
+);
+---
+
+<Layout title="Blog | Software Developer">
+  <main class="py-16">
+    <Heading title="Blog" fontSize="4xl" isPage />
+    <Posts posts={posts} />
+  </main>
+</Layout>

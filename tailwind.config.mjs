@@ -44,7 +44,6 @@ export default {
               color: "#BD976A",
               padding: "2px 8px",
               "border-radius": "4px",
-              "margin": "0 3px",
               "font-weight": "400",
               "font-family":
                 "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",

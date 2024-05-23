@@ -17,6 +17,7 @@ Angular 18 ha sido lanzado, y viene cargado de mejoras y sorpresas que no querr�
 
 Una de las mayores sorpresas de este año en el `ng-conf`, la conferencia más grande de Angular, fue la presentación de la colaboración entre los equipos de Angular y Wiz. ¿Te suena Wiz? Es el framework interno de Google utilizado para crear aplicaciones críticas en rendimiento como Google Search, Google Photos, y YouTube. La colaboración promete fusionar lo mejor de ambos mundos, mejorando la experiencia de desarrollo y optimizando las aplicaciones.
 
+
 ## Signals y la Transición a un Modo Sin Zoneless
 
 Desde Angular 16, los signals han estado haciendo ruido, y en Angular 18, se integran aún más profundamente en el núcleo del framework. Con la promesa de una transición completa a un modo sin zoneless, los signals se vuelven una herramienta estable y poderosa. Adiós al decorador `@Input()` y hola a la nueva función `input()`, que ofrece inputs opcionales y requeridos con una sintaxis más limpia y segura.
@@ -62,10 +63,10 @@ Angular 18 también trae mejoras para los outputs con la función output(), que 
 
 ```javascript
 @Component(...)
-export class MiComponente {
-  valorCambiado = output<string>();
+export class MyComponent {
+  valueChanged = output<string>();
   onValueChanged(msg: string): void {
-    this.valorCambiado.emit(msg);
+    this.valueChanged.emit(msg);
   }
 }
 ```

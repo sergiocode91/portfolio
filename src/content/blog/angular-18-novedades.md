@@ -59,7 +59,7 @@ export class MyComponent {
 
 ## Mejoras en los Outputs
 
-Angular 18 también trae mejoras para los outputs con la función output(), que ahora ofrece una sintaxis más coherente y segura, reemplazando al EventEmitter.
+Angular 18 también trae mejoras para los outputs con la función `output()`, que ahora ofrece una sintaxis más coherente y segura, reemplazando al `EventEmitter`.
 
 ```javascript
 @Component(...)
@@ -86,7 +86,7 @@ Reactive Forms recibe una mejora con el nuevo Observable events, que combina los
 
 ## Detección de Cambios Híbrida
 
-Angular 18 introduce la detección de cambios sin Zone.js de manera experimental, mejorando la performance y la experiencia del desarrollador. Con solo un par de modificaciones, puedes habilitar esta nueva característica y probar sus beneficios.
+Angular 18 introduce la detección de cambios sin `Zone.js` de manera experimental, mejorando la performance y la experiencia del desarrollador. Con solo un par de modificaciones, puedes habilitar esta nueva característica y probar sus beneficios.
 
 ```javascript
 bootstrapApplication(AppComponent, {

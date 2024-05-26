@@ -4,7 +4,7 @@ createdDate: "2024-04-29T19:01:35.334Z"
 description:
   "Aprende a potenciar tus aplicaciones Angular con la IA de Google Gemini, explorando su integración para mejorar la gestión y análisis de datos en tiempo real."
 imageUrl: "/images/impulsa-angular-con-google-gemini.webp"
-tags: ["Angular"]
+cagteories: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 slug: impulsa-angular-con-ia-geminis-google

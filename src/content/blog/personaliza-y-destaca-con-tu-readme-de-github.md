@@ -4,7 +4,7 @@ createdDate: "2024-04-22T19:01:35.334Z"
 description:
   "Explora las razones por las que un buen perfil es crucial y descubre consejos prácticos para destacar en la comunidad de desarrolladores."
 imageUrl: "/images/github-profile-cover.webp"
-tags: ["GitHub"]
+cagteories: ["GitHub"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 slug: personaliza-y-destaca-con-tu-readme-de-github

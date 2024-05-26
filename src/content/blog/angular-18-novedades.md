@@ -4,7 +4,7 @@ createdDate: "2024-05-23T07:01:35.334Z"
 description:
   "¡Angular 18 ha llegado con mejoras y nuevas funcionalidades! Descubre cómo esta versión optimiza tu desarrollo web con signals avanzados, detección de cambios híbrida y más."
 imageUrl: "/images/angular-18-novedades.webp"
-tags: ["Angular"]
+cagteories: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 slug: angular-18-novedades

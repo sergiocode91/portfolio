@@ -4,7 +4,7 @@ createdDate: "2024-04-11T19:02:52.208Z"
 description:
   "Descubre cómo las Deferrable Views de Angular 17 pueden acelerar la carga inicial de tu app, optimizando componentes pesados y mejorando métricas críticas de rendimiento."
 imageUrl: "/images/deferrables-view-cover.webp"
-tags: ["Angular"]
+cagteories: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 slug: descubre-deferrable-views-angular-17

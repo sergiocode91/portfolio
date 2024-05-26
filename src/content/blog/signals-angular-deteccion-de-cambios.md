@@ -3,7 +3,7 @@ title: "Signals en Angular: El futuro de la detección de cambios"
 createdDate: "2024-05-16T12:17:35.334Z"
 description: "Explora cómo los Signals en Angular mejoran la detección de cambios, haciendo las aplicaciones más eficientes, responsivas y menos intrusiva."
 imageUrl: "/images/signals-angular-deteccion-de-cambios.webp"
-tags: ["Angular"]
+cagteories: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 slug: signals-angular-deteccion-de-cambios

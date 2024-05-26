@@ -1,6 +1,6 @@
 ---
 title: "¡Angular v18 ya está disponible!"
-createdDate: "2024-05-23T19:01:35.334Z"
+createdDate: "2024-05-23T07:01:35.334Z"
 description:
   "¡Angular 18 ha llegado con mejoras y nuevas funcionalidades! Descubre cómo esta versión optimiza tu desarrollo web con signals avanzados, detección de cambios híbrida y más."
 imageUrl: "/images/angular-18-novedades.webp"

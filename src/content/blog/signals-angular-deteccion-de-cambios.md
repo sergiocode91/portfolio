@@ -130,7 +130,9 @@ effect(() => {
 Este intento resultará en un error específico:
 
 ```javascript
-ERROR Error: NG0600: Writing to signals is not allowed in a computed or an effect by default. Use allowSignalWrites in the CreateEffectOptions to enable this inside effects.
+ERROR Error: NG0600: Writing to signals is not allowed in a computed or 
+an effect by default. Use allowSignalWrites in the CreateEffectOptions to 
+enable this inside effects.
 ```
 
 Para situaciones donde realmente necesitas escribir en un `Signal` dentro de un effect, puedes usar la opción **allowSignalWrites** para permitirlo explícitamente:

@@ -8,7 +8,7 @@ cagteories: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 slug: parte-2
-published: true
+published: false
 ---
 ¡Dale un respiro a tu aplicación con las Deferrable Views de Angular 17! Esta función te permite posponer la carga de componentes hasta que sean realmente necesarios. Piénsalo como darle a tu app un "pase exprés" para saltarse la cola de carga inicial, haciendo que la experiencia del usuario sea más fluida desde el primer momento.
 

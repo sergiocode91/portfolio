@@ -1,14 +1,14 @@
 ---
-title: "Parte 2"
-createdDate: "2024-04-11T19:02:52.208Z"
+title: "Parte 2: Dominando los Bloques de Carga Diferida en Angular"
+createdDate: "2024-06-10T19:02:52.208Z"
 description:
-  "Descubre cómo las Deferrable Views de Angular 17 pueden acelerar la carga inicial de tu app, optimizando componentes pesados y mejorando métricas críticas de rendimiento."
+  "Aprende cómo los bloques @defer, @placeholder, @loading y @error mejoran la experiencia de usuario al cargar componentes de manera eficiente y manejando estados con elegancia."
 imageUrl: "/images/deferrables-view-cover.webp"
 cagteories: ["Angular"]
 author: "Sergio Rojas"
 authorImage: "/avatar.png"
 slug: parte-2
-published: false
+published: true
 ---
 ¡Dale un respiro a tu aplicación con las Deferrable Views de Angular 17! Esta función te permite posponer la carga de componentes hasta que sean realmente necesarios. Piénsalo como darle a tu app un "pase exprés" para saltarse la cola de carga inicial, haciendo que la experiencia del usuario sea más fluida desde el primer momento.
 
